@@ -25,9 +25,9 @@ jobs:
 
       - name: execute py script # run main.py
         env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_API_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: python test.py
+        run: python main.py
 
       - name: commit files
         run: |
