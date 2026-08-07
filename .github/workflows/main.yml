@@ -1,4 +1,4 @@
-name: run test.py
+name: run main.py
 
 on:
   repository_dispatch: 
@@ -27,7 +27,7 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_API_TOKEN }}
           CHAT_ID: ${{ secrets.CHANNEL_ID }}
-        run: python test.py
+        run: python main.py
 
       - name: commit files
         run: |
