@@ -17,6 +17,7 @@ if __name__ == '__main__':
     caa = CivilAviationAuthority(DATABASE)
     live_ac = AirplanesLive()
     t = Telegram(TELEGRAM_API_TOKEN)
+    t.send_message(CHANNEL_ID, 'Starting check')
 
     prev_ac = set()
     try:
