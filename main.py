@@ -45,4 +45,3 @@ if __name__ == '__main__':
             t.send_message(CHANNEL_ID, alert)
             prev_ac.add(p)
     pickle_to_file(alert_ac & prev_ac)
-    
