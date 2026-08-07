@@ -10,13 +10,13 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: actions/checkout@v4 # Updated from v2 to v4
+        uses: actions/checkout@v2 # checkout the repository content
 
       - name: setup python
-        uses: actions/setup-python@v5 # Updated from v4 to v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-          cache: 'pip'
+          python-version: '3.11' # install the python version needed
+          cache: 'pip' # caching pip dependencies
 
       - name: install python packages
         run: |
@@ -33,12 +33,11 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
 
       - name: push changes
-        uses: ad-m/github-push-action@master # Updated to @master or the newest stable release tag
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          branch: main 
