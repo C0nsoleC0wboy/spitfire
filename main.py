@@ -26,7 +26,7 @@ if __name__ == '__main__':
         pickle_to_file(prev_ac)
 
     try:
-        ac = live_ac.search_radius(51.30457774177224, -0.09535818745250407, 10)
+        ac = live_ac.search_radius(51.30457774177224, -0.09535818745250407, 5)
     except caa.client.RequestException:
         ac = []
 
